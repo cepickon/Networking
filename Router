@@ -35,20 +35,20 @@ interface g0/0/0
 no shutdown
 exit
 
-ip dhcp exluded-address 192.168.10.1 192.168.10.9 
-ip dhcp exluded-address 192.168.10.254 
+ip dhcp exlcuded-address 192.168.10.1 192.168.10.9 
+ip dhcp exlcuded-address 192.168.10.254 
 ip dhcp pool vlan10 
 network 192.168.10.0 255.255.255.0 
 default-router 192.168.10.1 
 exit
-ip dhcp exluded-address 192.168.20.1 192.168.20.9 
-ip dhcp exluded-address 192.168.20.254 
+ip dhcp exlcuded-address 192.168.20.1 192.168.20.9 
+ip dhcp exlcuded-address 192.168.20.254 
 ip dhcp pool vlan20 
 network 192.168.20.0 255.255.255.0 
 default-router 192.168.20.1 
 exit 
-ip dhcp exluded-address 192.168.99.1 192.168.99.9 
-ip dhcp exluded-address 192.168.99.254 
+ip dhcp exlcuded-address 192.168.99.1 192.168.99.9 
+ip dhcp exlcuded-address 192.168.99.254 
 ip dhcp pool vlan99 
 network 192.168.99.0 255.255.255.0 
 default-router 192.168.99.1 
