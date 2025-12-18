@@ -1,0 +1,66 @@
+enable 
+configure terminal 
+no ip domain-look up 
+hostname S1 
+banner motd #Authorized Access Only!# 
+enable secret cisco 
+line console 0 
+password cisco 
+login 
+exit 
+service password-encryption 
+
+ip domain-name s1.com 
+username admin privilege 15 secret cisco 
+line vty 0 15 
+login local 
+transport input ssh 
+exit 
+crypto key generate rsa  
+1024 
+
+vlan 10 
+exit 
+vlan 20 
+exit 
+vlan 99
+name managment
+exit 
+vlan 100
+name native
+exit 
+
+interface range fa0/1-4
+switch mode access 
+switchport access vlan 10 
+exit 
+interface range fa0/5-9
+switch mode access 
+switchport access vlan 20
+exit 
+interface fa0/10
+switch mode access 
+switchport access vlan 99
+exit 
+
+interface range F0/11-22, G0/2
+shutdown 
+exit 
+
+interface range fa0/22-24 
+channel-group 1 mode active 
+exit 
+interface port-channel  1 
+
+switchport mode trunk 
+switchport trunk native vlan 100 
+switchport trunk allowed vlan 10,20,99 
+exit 
+
+interface vlan99
+ip address 192.168.99.5 255.255.255.0
+no shutdown 
+exit 
+
+exit 
+write memory 
