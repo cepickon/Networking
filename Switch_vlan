@@ -1,0 +1,37 @@
+//Creation of VLANs
+vlan 10 
+exit 
+vlan 20 
+exit 
+vlan 99
+name managment
+exit 
+vlan 100
+name native
+exit 
+
+//Setting up VLANs on ports
+interface range fa0/1-4
+switch mode access 
+switchport access vlan 10 
+exit 
+interface range fa0/5-9
+switch mode access 
+switchport access vlan 20
+exit 
+interface fa0/10
+switch mode access 
+switchport access vlan 99
+exit 
+
+//Turn off unused ports
+interface range fa0/11-23, G0/1-2
+shutdown 
+exit 
+
+//Trunk port
+interface fa0/24
+switchport mode trunk 
+switchport trunk native vlan 100 
+switchport trunk allowed vlan 10,20,99 
+exit 
