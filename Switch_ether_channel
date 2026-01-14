@@ -1,6 +1,6 @@
 //Ether channel setup
 interface range fa0/22-24 
-channel-group 1 mode active 
+channel-group 1 mode active //On the other side passive
 exit 
 
 //Ether channel settings
