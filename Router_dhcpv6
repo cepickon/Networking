@@ -1,1 +1,18 @@
+//SLAAC (Host create the ipv6)
+ipv6 unicast-routing
+interface g0/0
+ipv6 address 2001:db8:1::1/64
+exit
 
+//SLAAC + Stateless DHCPv6 (Host create the ipv6 and get other information from router)
+ipv6 dhcp pool IPV6-STATELESS
+dns-server 2001:4860:4860::8888
+domain-name skola.local
+exit
+
+//Statefull DHCPv6
+ipv6 dhcp pool IPV6-STATEFUL
+address prefix 2001:db8:1::/64
+dns-server 2001:4860:4860::8888
+domain-name skola.local
+exit
