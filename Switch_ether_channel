@@ -1,6 +1,11 @@
-//Ether channel setup
+//Ether channel setup LACP
 interface range fa0/22-24 
 channel-group 1 mode active //On the other side passive
+exit 
+
+//Ether channel setup PAGP
+interface range fa0/22-24 
+channel-group 1 mode desirable //On the other side auto
 exit 
 
 //Ether channel settings
