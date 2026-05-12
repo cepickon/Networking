@@ -9,9 +9,9 @@ exit
 
 interface g0/0/1
 ip address 192.168.2.2 255.255.255.0
-standby 1 ip 192.168.2.1
-standby 1 priority 110
-standby 1 preempt
+standby 2 ip 192.168.2.1
+standby 2 priority 110
+standby 2 preempt
 no shutdown
 exit
 
@@ -25,7 +25,7 @@ exit
 
 interface g0/0/1
 ip address 192.168.2.3 255.255.255.0
-standby 1 ip 192.168.2.1
-standby 1 priority 90
+standby 2 ip 192.168.2.1
+standby 2 priority 90
 no shutdown
 exit
