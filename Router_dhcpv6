@@ -10,7 +10,7 @@ dns-server 2001:4860:4860::8888
 domain-name skola.local
 exit
 
-//Statefull DHCPv6
+//Stateful DHCPv6
 ipv6 dhcp pool IPV6-STATEFUL
 address prefix 2001:db8:1::/64
 dns-server 2001:4860:4860::8888
