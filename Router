@@ -22,13 +22,18 @@ crypto key generate rsa
 line vty 0 4
 ip ssh version 2
 
+//Turn on ipv6
+ipv6 unicast-routing
+
 //IP address
 interface g0/0/0
 ip address 192.168.10.1 255.255.255.0 
+ipv6 address 2001:acad:db8:1::1/64
 no shutdown
 exit 
 interface g0/0/1 
 ip address 192.168.20.1 255.255.255.0 
+ipv6 address 2001:acad:db8:2::1/64
 no shutdown
 exit 
 
