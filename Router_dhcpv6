@@ -11,7 +11,7 @@ domain-name skola.local
 exit
 //on interface
 ipv6 nd other-config-flag
-ipv6 dhp server IPV6-STATELESS
+ipv6 dhcp server IPV6-STATELESS
 
 //Stateful DHCPv6
 ipv6 dhcp pool IPV6-STATEFUL
