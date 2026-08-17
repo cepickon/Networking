@@ -14,8 +14,11 @@ ipv6 nd other-config-flag
 ipv6 dhcp server IPV6-STATELESS
 
 //Stateful DHCPv6
-ipv6 dhcp pool IPV6-STATEFUL
+ipv6 dhcp pool IPV6-STATEFULL
 address prefix 2001:db8:1::/64
 dns-server 2001:4860:4860::8888
 domain-name skola.local
 exit
+//on interface
+ipv6 nd managed-config-flag
+ipv6 dhcp server IPV6-STATEFULL
