@@ -6,3 +6,11 @@ ip route 0.0.0.0 0.0.0.0 192.168.10.1 //next-hop address
 
 //Helper for DHCP
 ip helper-address 192.168.0.100 //server address
+
+//RIP routing
+router rip
+version 2
+no auto-summary
+network 192.168.10.0
+network 172.16.1.0
+passive-interface gigabit Ethernet 0/0/0 //unused interface
