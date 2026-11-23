@@ -14,3 +14,10 @@ no auto-summary
 network 192.168.10.0
 network 172.16.1.0
 passive-interface gigabit Ethernet 0/0/0 //unused interface
+
+//OSPF routing
+router ospf 1
+router-id 1.1.1.1
+network 192.168.10.0 0.0.0.255 area 0
+network 172.16.1.0 0.0.0.255 area 0
+passive-interface gigabit Ethernet 0/0/0 //unused interface
